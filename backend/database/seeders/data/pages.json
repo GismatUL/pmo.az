@@ -1,0 +1,362 @@
+{
+  "about": {
+    "title": "Haqqımızda",
+    "body": [
+      {
+        "type": "image",
+        "src": "/images/about/about-1.jpg"
+      },
+      {
+        "type": "p",
+        "text": "PMO.az - Azərbaycanın layihə düşüncəsi missioneri!"
+      },
+      {
+        "type": "p",
+        "text": "Zamanın tələbindən irəli gələrək \"Project Management Office Azerbaijan\" komandası olaraq fəaliyyətə başladıq. Ətrafımızda layihə peşəkarlarını toplamağı bacardıq və layihələrin idarə olunmasında beynəlxalq təcrübəni gənclərimizə əl çatan etdik."
+      },
+      {
+        "type": "p",
+        "text": "Ofisimiz peşəkar biliyinin genişləndirilməsini arzulayan, fikir mübadiləsi aparmağı sevən, əlaqələrin artırılmasını istəyən, konsultasiya və təlimlər vasitəsilə biliklərini paylaşmağı bacaranları ətrafında birləşdirir. Bununla da Layihələrin İdarə olunmasının geniş təbliğatını aparırıq."
+      },
+      {
+        "type": "p",
+        "text": "\"NASA-nın layihə rəhbərinin 100 qaydası\" -nda bildirilir ki, layihənin uğurlu olmasının əsası layihənin əvvəlində qoyulur. Layihələrin idarə olunması tədbiqi, layihə yönümlü düşünmə artıq zamanın tələbidir."
+      },
+      {
+        "type": "p",
+        "text": "Komandamız bununla yanaşı videokurslar platforması və təlimlər də təqdim edir. Proqramın özəlliyi ondadır ki, bu, tək nəzəriyyə deyil, təlimdə praktiki alətlər istifadəsilə, həqiqətən layihənin necə idarə olunması göstərilir. Bunun üçün addım-addım izah verilərək komandalar ilə şirkətin fərdi proqramını hazırlanır. Müassir texnologiyaların tədbiqilə isə, oxumaqla yanaşı video dinləmə və real layihə şablonlarından faydalanmağa imkan yaradılır. Şirkət daxili uzun müddətli fayda əldə olunur."
+      },
+      {
+        "type": "p",
+        "text": "Layihələrinizin effektivliyinə optimizasiya və sistemliklə çatırıq!"
+      },
+      {
+        "type": "p",
+        "text": "Təsisçi və Direktor"
+      },
+      {
+        "type": "p",
+        "text": "Rəşad İbrahimov"
+      },
+      {
+        "type": "image",
+        "src": "/images/about/meqsed.svg"
+      },
+      {
+        "type": "h2",
+        "text": "Məqsədimiz"
+      },
+      {
+        "type": "p",
+        "text": "Project Management Office (PMO) ayrıca bir idarəetmə sahəsi olaraq, populyarlıq qazanmağa davam edir. Layihə ofisinin yaradılmasının əsas məqsədi - layihə idarəetmə metodları, prosesləri və qaydalarının standartlaşdırılmasından faydalanmaqdır. Bu sadə formulasiyanın arxasında potensial olaraq əldə edilə bilən kifayət qədər böyük iş həcmi var. PMO olaraq əsas məqsədimiz Azərbaycanda Beynəlxalq təcrübəni geniş yayılmasına töhvə vermək və bu idarəetmə yanaşmasından faydalanmaq istəyənlərə dəstək olmaqdır."
+      },
+      {
+        "type": "image",
+        "src": "/images/about/mission.svg"
+      },
+      {
+        "type": "h2",
+        "text": "Missiyamız"
+      },
+      {
+        "type": "p",
+        "text": "Bizim missiyamız tərəfdaşlıq prinsiplərinə əsaslanır. Təhlil edirik, tanıyırıq və sonra hərəkət edirik. Mövcud inanclara meydan oxuyan və lazım olan dəyişiklikləri həyata keçirə biləcək insanları bir araya gətiririk. Müştərilərə düzgün səlahiyyətləri inkişaf etdirməyə və uzunmüddətli faydalar əldə etməyə kömək edirik və gələcəyi formalaşdırırıq. Anti-krizis və dəyişiklərin idarə edilməsində biz sizlərləyik."
+      },
+      {
+        "type": "p",
+        "text": "Layihələrinizin effektivliyinə optimizasiya və sistemliklə çatırıq!"
+      }
+    ]
+  },
+  "greenpm": {
+    "title": "Dayanıqlı Layihə menecmenti",
+    "body": [
+      {
+        "type": "h2",
+        "text": "Dayanıqlı Layihə menecmenti nədir?"
+      },
+      {
+        "type": "p",
+        "text": "Dayanıqlı Layihə menecmenti nədir?"
+      },
+      {
+        "type": "p",
+        "text": "Green Project Management® və ya Dayanıqlı Layihə Menecmenti, xalis müsbət ekoloji, sosial və iqtisadi təsirin təmin edilməsi üçün layihənin bütün həyat dövrünü nəzərə alaraq müəyyən edilmiş məqsədə nail olmaq üçün metodların, alətlərin və texnikaların tətbiqidir."
+      },
+      {
+        "type": "p",
+        "text": "Layihə idarəçiliyi peşələri yetkinləşdikcə, layihə uğurunun nə olduğuna dair baxışını dəyişir. Peşə indi vaxt, xərc və əhatə dairəsi ilə bağlı ənənəvi diqqətindən kənara çıxır və aktivin həyat dövrü fokusunu qoruyarkən iş vəziyyətində çatdırılma məqsədlərinə diqqət yetirir. Təkamül prosesində növbəti addım layihələrin planet və onun məhdud resursları hesabına həyata keçirilmədiyi davamlılıq etikasını qəbul etməkdir. Layihə menecmenti hər bir layihənin sosial və ətraf mühitə təsirlərini aradan qaldırmaq üçün daha çox səy göstərməlidir ki, yaşadığımız və gələcək nəsillərdən borc aldığımız dünya bərpa olunsun və dayanıqlı olsun."
+      },
+      {
+        "type": "p",
+        "text": "PMO.az - GPM® Global-ın Akreditasiyalı Təlim Partnyoru olaraq 2024-cü ildən etibarən Green Project Management (Dayanıqlı Layihə Menecmenti) üzrə sertifikasiya ilə əlaqədar xidmətləri həyata keçiririr."
+      },
+      {
+        "type": "image",
+        "src": "/images/greenpm/GPM_Driving_Sustainable_Change.png"
+      },
+      {
+        "type": "p",
+        "text": "Daha çox: Greenpm.az"
+      },
+      {
+        "type": "image",
+        "src": "/images/greenpm/GPM_Driving_Sustainable_Change.png"
+      },
+      {
+        "type": "p",
+        "text": "Dayanıqlı Layihə menecmenti nədir?"
+      },
+      {
+        "type": "p",
+        "text": "Dayanıqlı Layihə menecmenti nədir?"
+      },
+      {
+        "type": "p",
+        "text": "Green Project Management® və ya Dayanıqlı Layihə ..."
+      },
+      {
+        "type": "p",
+        "text": "Ətraflı"
+      },
+      {
+        "type": "image",
+        "src": "/images/greenpm/GPM-B_wide.png"
+      },
+      {
+        "type": "p",
+        "text": "Dayanıqlı Layihə Meneceri kimdir?"
+      },
+      {
+        "type": "p",
+        "text": "Dayanıqlı layihələrin idarə edilməsi üzrə beynəlxalq sertifikat - Green Project Management ..."
+      },
+      {
+        "type": "p",
+        "text": "Ətraflı"
+      },
+      {
+        "type": "image",
+        "src": "/images/greenpm/PSM.png"
+      },
+      {
+        "type": "p",
+        "text": "GPM® PSM3 təşkilatların sertifikasiyası"
+      },
+      {
+        "type": "p",
+        "text": "Layihə Yönümlü Təşkilatların Qəlbində Dayanıqlılığın Yerləşdirilməsi"
+      },
+      {
+        "type": "p",
+        "text": "Təşkilatınız dayanıqlıq məqsədlərini gücləndirməyə hazırdırmı? ..."
+      },
+      {
+        "type": "p",
+        "text": "Ətraflı"
+      },
+      {
+        "type": "image",
+        "src": "/images/greenpm/GPM_360.png"
+      },
+      {
+        "type": "p",
+        "text": "GPM 360°: Layihənizin beynəlxalq qiymətləndirilməsi və sertifikatlaşdırılması"
+      },
+      {
+        "type": "p",
+        "text": "Dayanıqlı layihələrin idarə edilməsi üçün dünyanın aparıcı standartı olan GPM P5 ..."
+      },
+      {
+        "type": "p",
+        "text": "Ətraflı"
+      },
+      {
+        "type": "p",
+        "text": ""
+      }
+    ]
+  },
+  "greenpm-about": {
+    "title": "Dayanıqlı Layihə menecmenti",
+    "body": [
+      {
+        "type": "h2",
+        "text": "Dayanıqlı Layihə menecmenti nədir?"
+      },
+      {
+        "type": "p",
+        "text": "Dayanıqlı Layihə menecmenti nədir?"
+      },
+      {
+        "type": "p",
+        "text": "Green Project Management® və ya Dayanıqlı Layihə Menecmenti, xalis müsbət ekoloji, sosial və iqtisadi təsirin təmin edilməsi üçün layihənin bütün həyat dövrünü nəzərə alaraq müəyyən edilmiş məqsədə nail olmaq üçün metodların, alətlərin və texnikaların tətbiqidir."
+      },
+      {
+        "type": "p",
+        "text": "Layihə idarəçiliyi peşələri yetkinləşdikcə, layihə uğurunun nə olduğuna dair baxışını dəyişir. Peşə indi vaxt, xərc və əhatə dairəsi ilə bağlı ənənəvi diqqətindən kənara çıxır və aktivin həyat dövrü fokusunu qoruyarkən iş vəziyyətində çatdırılma məqsədlərinə diqqət yetirir. Təkamül prosesində növbəti addım layihələrin planet və onun məhdud resursları hesabına həyata keçirilmədiyi davamlılıq etikasını qəbul etməkdir. Layihə menecmenti hər bir layihənin sosial və ətraf mühitə təsirlərini aradan qaldırmaq üçün daha çox səy göstərməlidir ki, yaşadığımız və gələcək nəsillərdən borc aldığımız dünya bərpa olunsun və dayanıqlı olsun."
+      },
+      {
+        "type": "p",
+        "text": "PMO.az - GPM® Global-ın Akreditasiyalı Təlim Partnyoru olaraq 2024-cü ildən etibarən Green Project Management (Dayanıqlı Layihə Menecmenti) üzrə sertifikasiya ilə əlaqədar xidmətləri həyata keçiririr."
+      },
+      {
+        "type": "image",
+        "src": "/images/greenpm/GPM_Driving_Sustainable_Change.png"
+      },
+      {
+        "type": "p",
+        "text": "Daha çox: Greenpm.az"
+      },
+      {
+        "type": "image",
+        "src": "/images/greenpm/GPM_Driving_Sustainable_Change.png"
+      },
+      {
+        "type": "p",
+        "text": "Dayanıqlı Layihə menecmenti nədir?"
+      },
+      {
+        "type": "p",
+        "text": "Dayanıqlı Layihə menecmenti nədir?"
+      },
+      {
+        "type": "p",
+        "text": "Green Project Management® və ya Dayanıqlı Layihə ..."
+      },
+      {
+        "type": "p",
+        "text": "Ətraflı"
+      },
+      {
+        "type": "image",
+        "src": "/images/greenpm/GPM-B_wide.png"
+      },
+      {
+        "type": "p",
+        "text": "Dayanıqlı Layihə Meneceri kimdir?"
+      },
+      {
+        "type": "p",
+        "text": "Dayanıqlı layihələrin idarə edilməsi üzrə beynəlxalq sertifikat - Green Project Management ..."
+      },
+      {
+        "type": "p",
+        "text": "Ətraflı"
+      },
+      {
+        "type": "image",
+        "src": "/images/greenpm/PSM.png"
+      },
+      {
+        "type": "p",
+        "text": "GPM® PSM3 təşkilatların sertifikasiyası"
+      },
+      {
+        "type": "p",
+        "text": "Layihə Yönümlü Təşkilatların Qəlbində Dayanıqlılığın Yerləşdirilməsi"
+      },
+      {
+        "type": "p",
+        "text": "Təşkilatınız dayanıqlıq məqsədlərini gücləndirməyə hazırdırmı? ..."
+      },
+      {
+        "type": "p",
+        "text": "Ətraflı"
+      },
+      {
+        "type": "image",
+        "src": "/images/greenpm/GPM_360.png"
+      },
+      {
+        "type": "p",
+        "text": "GPM 360°: Layihənizin beynəlxalq qiymətləndirilməsi və sertifikatlaşdırılması"
+      },
+      {
+        "type": "p",
+        "text": "Dayanıqlı layihələrin idarə edilməsi üçün dünyanın aparıcı standartı olan GPM P5 ..."
+      },
+      {
+        "type": "p",
+        "text": "Ətraflı"
+      },
+      {
+        "type": "p",
+        "text": ""
+      }
+    ]
+  },
+  "assistances": {
+    "title": "Xidmətlərimiz",
+    "body": [
+      {
+        "type": "image",
+        "src": "/images/assistances/pexels-photo-3184317_1593959668.jpeg"
+      },
+      {
+        "type": "image",
+        "src": "/images/assistances/icons/Telim_1590619782.svg"
+      },
+      {
+        "type": "p",
+        "text": "Təlimlər/Education"
+      },
+      {
+        "type": "p",
+        "text": "PMO.az layihələrin idarə olunması sahəsində beynəlxalq standartlara və qabaqcıl dünya ..."
+      },
+      {
+        "type": "p",
+        "text": "Ətraflı"
+      },
+      {
+        "type": "image",
+        "src": "/images/assistances/pexels-photo-3740174_1593959718.jpeg"
+      },
+      {
+        "type": "image",
+        "src": "/images/assistances/icons/Meslehet_1590619792.svg"
+      },
+      {
+        "type": "p",
+        "text": "Sertifikasiya/Certification"
+      },
+      {
+        "type": "p",
+        "text": "PMO.az sertifikasiya istiqamətində fəaliyyətini üç əsas səviyyədə qurur:"
+      },
+      {
+        "type": "p",
+        "text": "peşəkarlar, layihələr və ..."
+      },
+      {
+        "type": "p",
+        "text": "Ətraflı"
+      },
+      {
+        "type": "image",
+        "src": "/images/assistances/developing-effective-communication-skills_1593959963.jpg"
+      },
+      {
+        "type": "image",
+        "src": "/images/assistances/icons/Sebekelesme_1590619802.svg"
+      },
+      {
+        "type": "p",
+        "text": "Tədbiq/Implementation"
+      },
+      {
+        "type": "p",
+        "text": "PMO.az layihə idarəetməsini yalnız öyrətmir və sertifikatlaşdırmır — biz onu real ..."
+      },
+      {
+        "type": "p",
+        "text": "Ətraflı"
+      },
+      {
+        "type": "p",
+        "text": ""
+      }
+    ]
+  }
+}

@@ -1,0 +1,387 @@
+/* Shared components — Figma symbols "PMO / …" and site chrome */
+
+/* ---------- Buttons (PMO / Button / Primary · Secondary) ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 16px 22px;
+  border: 0;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.35;
+  white-space: pre;
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    transform 0.15s ease;
+}
+.btn:active {
+  transform: translateY(1px);
+}
+.btn:disabled {
+  cursor: default;
+  transform: none;
+}
+.btn-primary {
+  background: var(--lime);
+  color: var(--green);
+}
+.btn-primary:hover {
+  background: #c8e65f;
+}
+.btn-secondary {
+  background: var(--green);
+  color: var(--white);
+}
+.btn-secondary:hover {
+  background: #0c3329;
+}
+
+/* ---------- Program card (PMO / Program card) ---------- */
+.program-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 28px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  line-height: 1.35;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+.program-card:hover {
+  border-color: #c3ccc0;
+  box-shadow: 0 8px 24px rgba(16, 62, 52, 0.06);
+}
+.program-card__meta {
+  width: 100%;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--muted);
+}
+.program-card__title {
+  width: 100%;
+  font-size: 28px;
+  font-weight: 500;
+  color: var(--green);
+}
+.program-card__text {
+  width: 100%;
+  font-size: 15px;
+  color: var(--muted);
+}
+.program-card__price {
+  width: 100%;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+/* ---------- Filter chips ---------- */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.chip {
+  padding: 10px 20px;
+  border: 0;
+  border-radius: 30px;
+  background: var(--white);
+  color: var(--green);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.35;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+.chip:hover {
+  background: #eef1e9;
+}
+.chip[aria-pressed="true"] {
+  background: var(--green);
+  color: var(--white);
+}
+@media (max-width: 900px) {
+  .chips {
+    gap: 8px;
+  }
+  .chip {
+    padding: 10px 14px;
+  }
+}
+
+/* ---------- Form fields (PMO / Form field · Textarea) ---------- */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+.field__label {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.35;
+  color: var(--green);
+}
+.field__input {
+  width: 100%;
+  padding: 16px 15px; /* + 1px border = Figma 17/16 */
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background: var(--white);
+  font-size: 14px;
+  line-height: 1.35;
+  color: var(--ink);
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+.field__input::placeholder {
+  color: var(--muted);
+  opacity: 1;
+}
+.field__input:focus {
+  border-color: var(--green);
+}
+textarea.field__input {
+  height: 108px; /* 17 top + 19 line + 72 bottom */
+  min-height: 108px;
+  resize: vertical;
+}
+.form-note {
+  font-size: 11px;
+  line-height: 1.35;
+  color: var(--moss);
+}
+
+/* ---------- Header (Navigation) ---------- */
+.site-header {
+  position: relative;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px max(var(--gutter), calc((100% - var(--content)) / 2));
+  background: var(--green);
+  color: var(--white);
+}
+.site-header__logo img {
+  width: 136px;
+  height: 52px;
+  object-fit: contain;
+}
+.site-nav {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.25;
+  white-space: nowrap;
+}
+.site-nav a {
+  position: relative;
+  transition: color 0.15s ease;
+}
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+  color: var(--lime);
+}
+.site-header__tools {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  font-weight: 500;
+  line-height: 1.25;
+  white-space: pre;
+}
+.lang-switch {
+  font-size: 12px;
+  color: var(--sage);
+}
+.lang-switch b {
+  font-weight: 500;
+  color: var(--white);
+}
+.site-header__login {
+  font-size: 14px;
+  color: var(--white);
+}
+.site-header__login:hover {
+  color: var(--lime);
+}
+.menu-toggle {
+  display: none;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--white);
+  font-size: 25px;
+  line-height: 1.25;
+  cursor: pointer;
+}
+.mobile-menu {
+  display: none;
+}
+
+@media (max-width: 1100px) {
+  .site-nav {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 900px) {
+  .site-header {
+    padding-block: 18px;
+  }
+  .site-header__logo img {
+    width: 112px;
+    height: 43px;
+  }
+  .site-nav,
+  .site-header__login {
+    display: none;
+  }
+  .site-header__tools {
+    gap: 16px;
+  }
+  .lang-switch {
+    font-size: 11px;
+  }
+  .menu-toggle {
+    display: block;
+  }
+  .mobile-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 8px var(--gutter) 24px;
+    background: var(--green);
+    border-top: 1px solid var(--rule-dark);
+    box-shadow: 0 16px 32px rgba(10, 45, 38, 0.25);
+  }
+  .mobile-menu[hidden] {
+    display: none;
+  }
+  .mobile-menu a {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--rule-dark);
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .mobile-menu a[aria-current="page"] {
+    color: var(--lime);
+  }
+  .mobile-menu a:last-child {
+    border-bottom: 0;
+  }
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 64px max(var(--gutter), calc((100% - var(--content)) / 2)) 32px;
+  background: var(--deep);
+  color: var(--sage);
+  line-height: 1.35;
+}
+.site-footer__nav {
+  display: flex;
+  gap: 56px;
+  align-items: flex-start;
+}
+.site-footer__brand {
+  display: flex;
+  flex: 0 0 300px;
+  flex-direction: column;
+  gap: 20px;
+}
+.site-footer__brand img {
+  width: 150px;
+  height: 58px;
+  object-fit: contain;
+}
+.site-footer__tagline {
+  font-size: 16px;
+}
+.site-footer__social {
+  font-size: 12px;
+  white-space: pre-wrap;
+}
+.site-footer__col {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+  font-size: 13px;
+}
+.site-footer__col h2 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--white);
+}
+.site-footer a {
+  white-space: pre-wrap;
+  transition: color 0.15s ease;
+}
+.site-footer a:hover {
+  color: var(--white);
+}
+.site-footer__legal {
+  display: flex;
+  gap: 16px;
+  padding-top: 24px;
+  border-top: 1px solid var(--rule-dark);
+  font-size: 11px;
+}
+.site-footer__legal p:first-child {
+  flex: 1 1 0;
+}
+.site-footer__legal p:last-child {
+  white-space: pre;
+}
+
+@media (max-width: 900px) {
+  .site-footer {
+    padding-top: 48px;
+  }
+  .site-footer__nav {
+    flex-direction: column;
+    gap: 32px;
+  }
+  .site-footer__brand {
+    flex-basis: auto;
+  }
+  .site-footer__col {
+    width: 100%;
+  }
+  .site-footer__legal {
+    flex-direction: column;
+  }
+}
+
+/* Inner pages use the "PMO / Label" style (14/1.3) in the nav. */
+.site-header--inner .site-nav,
+.site-header--inner .site-header__tools {
+  line-height: 1.3;
+}
+.site-header--inner .lang-switch {
+  font-size: 14px;
+  color: var(--cream);
+}
+@media (max-width: 900px) {
+  .site-header--inner .lang-switch {
+    font-size: 11px;
+  }
+}

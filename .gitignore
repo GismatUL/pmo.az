@@ -1,0 +1,25 @@
+# OS / editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.log
+
+# Node (frontend, tools, design export)
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+
+# Original Figma Make export: keep the source, not its build output or bundles
+design/figma-make-export/.next/
+design/figma-make-export/out/
+design/figma-make-export/**/*.zip
+
+# Local env files (each app ships its own .env.example)
+.env
+.env.*
+!.env.example
+
+# Claude Code local state
+.claude/settings.local.json

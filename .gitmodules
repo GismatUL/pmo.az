@@ -1,0 +1,3 @@
+[submodule "ai-engineering"]
+	path = ai-engineering
+	url = https://github.com/GismatUL/ai-engineering.git

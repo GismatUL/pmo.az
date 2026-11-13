@@ -1,0 +1,226 @@
+/* PMO.az design foundations — values from Figma "PMO.az • Foundations" (node 10:89) */
+:root {
+  --green: #103e34;
+  --deep: #0a2d26;
+  --lime: #d4ef78;
+  --cream: #f6f6ef;
+  --white: #ffffff;
+  --ink: #153c33;
+  --muted: #64736c;
+  --line: #dae0d7;
+  --sage: #bfcec3; /* body copy on green */
+  --rule-dark: #3d6254; /* dividers on green */
+  --moss: #34534a; /* secondary copy on light */
+  --mist: #ecefe6; /* trust band */
+  --pale: #e7ecdd; /* soft panels */
+
+  --font: var(--font-inter), "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --content: 1280px;
+  --gutter: 80px;
+  --section-y: 80px;
+}
+
+@media (max-width: 900px) {
+  :root {
+    --gutter: 24px;
+    --section-y: 56px;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.35;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+ul,
+ol {
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--lime);
+  outline-offset: 3px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------- Layout ---------- */
+
+/* Full-bleed section with content capped at 1280px (80px gutters at 1440). */
+.section {
+  padding: var(--section-y) max(var(--gutter), calc((100% - var(--content)) / 2));
+}
+
+.bg-green {
+  background: var(--green);
+  color: var(--white);
+}
+.bg-deep {
+  background: var(--deep);
+  color: var(--white);
+}
+.bg-cream {
+  background: var(--cream);
+}
+.bg-mist {
+  background: var(--mist);
+}
+.bg-pale {
+  background: var(--pale);
+}
+.bg-lime {
+  background: var(--lime);
+}
+.bg-white {
+  background: var(--white);
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* ---------- Typography ---------- */
+
+.eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+.bg-green .eyebrow,
+.eyebrow.on-dark {
+  color: var(--lime);
+}
+.bg-lime .eyebrow {
+  color: var(--green);
+}
+
+/* Section title: 44/-1.32 desktop → 34/-1.02 mobile */
+.h-section {
+  font-size: 44px;
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: -0.03em;
+  color: var(--green);
+}
+.bg-green .h-section {
+  color: var(--white);
+}
+
+/* Page title on inner heroes */
+.h-page {
+  font-size: 56px;
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+}
+
+.lead {
+  font-size: 16px;
+  line-height: 1.35;
+  color: var(--muted);
+}
+.bg-green .lead {
+  color: var(--sage);
+}
+
+@media (max-width: 900px) {
+  .h-section {
+    font-size: 34px;
+  }
+}
+
+/* Text link with arrow, e.g. "Bütün proqramlar  ↗" */
+.text-link {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--green);
+  white-space: pre;
+  transition: opacity 0.15s ease;
+}
+.text-link:hover {
+  opacity: 0.72;
+}
+.bg-green .text-link {
+  color: var(--lime);
+}
+.text-link.light {
+  color: var(--white);
+  font-weight: 500;
+}
+
+.br-desktop {
+  display: inline;
+}
+@media (max-width: 900px) {
+  .br-desktop {
+    display: none;
+  }
+}
