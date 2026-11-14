@@ -5,7 +5,6 @@ import { LinkButton } from "@/components/Button";
 import { CtaBand } from "@/components/CtaBand";
 import { PageHero } from "@/components/PageHero";
 import { getConsulting, getServices } from "@/lib/api";
-import { RELATED } from "@/lib/services";
 import { ARROW } from "@/lib/site";
 
 type Params = { params: Promise<{ slug: string }> };
@@ -18,15 +17,18 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const { slug } = await params;
   const service = await getConsulting(slug);
-  return service ? { title: service.title, description: service.detail?.intro ?? service.summary } : {};
+  return service ? { title: service.title, description: service.detail?.intro ?? service.intro ?? service.summary } : {};
 }
 
 export default async function ServiceDetailPage({ params }: Params) {
   const { slug } = await params;
-  const service = await getConsulting(slug);
+  const [service, { consulting }] = await Promise.all([getConsulting(slug), getServices()]);
   if (!service) notFound();
   const d = service.detail;
-  const related = RELATED.filter((r) => r.href !== `/services/${slug}`).slice(0, 3);
+  const related = consulting
+    .filter((s) => s.slug !== slug)
+    .slice(0, 3)
+    .map((s) => ({ title: s.title, text: s.summary, href: `/services/${s.slug}` }));
 
   return (
     <div className="inner">
@@ -43,7 +45,7 @@ export default async function ServiceDetailPage({ params }: Params) {
             service.title
           )
         }
-        intro={d?.intro ?? service.summary}
+        intro={d?.intro ?? service.intro ?? service.summary}
       >
         <LinkButton href="/contact#enquiry" label="Konsultasiya üçün müraciət et" />
       </PageHero>

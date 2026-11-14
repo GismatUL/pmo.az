@@ -16,9 +16,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: { default: "PMO.az — Layihə düşüncə məktəbi", template: "%s — PMO.az" },
+  title: { default: "PMO.az — Layihə idarəetməsi üzrə konsaltinq", template: "%s — PMO.az" },
   description:
-    "Peşəkar inkişafınızdan təşkilatınızın transformasiyasına — təlim, sertifikasiya və konsaltinq ilə yanınızdayıq.",
+    "PMO qurulması, portfel idarəetməsi, layihələrin planlaşdırılması, monitorinqi və nəzarəti üzrə konsaltinq və məsləhət xidmətləri.",
   icons: { icon: asset("/favicon.png") },
 };
 

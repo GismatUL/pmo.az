@@ -1,6 +1,6 @@
 export const NAV = [
-  { label: "Proqramlar", href: "/programs" },
   { label: "Xidmətlər", href: "/services" },
+  { label: "Təlimlər", href: "/programs" },
   { label: "Haqqımızda", href: "/about" },
   { label: "Bloq", href: "/blog" },
   { label: "Əlaqə", href: "/contact" },

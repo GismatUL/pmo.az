@@ -98,6 +98,13 @@ npm run build                       # → frontend/out
 for the enquiry form. Without them the site builds from the design content in
 `src/lib/*.ts`, and the form confirms locally.
 
+Seeded images (news covers, experts, testimonials, partners) point at their
+live URLs on `https://pmo.az/images/...` (`SeedData::media`). Images uploaded in
+the admin live on the backend's `/storage/...`; after the build,
+`scripts/localize-media.mjs` (`postbuild`) copies those into `out/storage/` and
+rewrites the links, so the exported site does not depend on the backend
+running.
+
 ## Content sources
 
 - **Live pmo.az** (scraped November 2026 by `tools/scrape-pmo`): 14 news and

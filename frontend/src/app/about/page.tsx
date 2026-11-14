@@ -6,7 +6,8 @@ import { asset } from "@/lib/asset";
 
 export const metadata: Metadata = {
   title: "Haqqımızda",
-  description: "PMO.az — qlobal təcrübəni yerli ehtiyaclarla birləşdirən Layihə Düşüncə Məktəbi.",
+  description:
+    "PMO.az — təşkilatlara layihə idarəetmə sistemləri qurmağa və layihələri strateji məqsədlərə uyğun icra etməyə kömək edən konsaltinq şirkəti.",
 };
 
 const STANDARDS = [
@@ -30,12 +31,12 @@ export default async function AboutPage() {
         crumb="Haqqımızda"
         title={
           <>
-            Layihə düşüncəsi ilə
+            Layihə idarəetməsində
             <br />
-            gələcəyi qururuq.
+            etibarlı tərəfdaş.
           </>
         }
-        intro="PMO.az — qlobal təcrübəni yerli ehtiyaclarla birləşdirən Layihə Düşüncə Məktəbi."
+        intro="PMO.az — təşkilatlara layihə idarəetmə sistemləri qurmağa və layihələri strateji məqsədlərə uyğun icra etməyə kömək edən konsaltinq şirkəti."
       />
 
       {/* Mission — 16:241 */}
@@ -44,17 +45,18 @@ export default async function AboutPage() {
           <div>
             <p className="t-label c-muted">BİZ KİMİK?</p>
             <h2 className="t-h1 c-ink">
-              Sadəcə təlim deyil.
+              Metodologiya deyil,
               <br />
-              Düşüncə məktəbi.
+              işləyən sistem.
             </h2>
             <p className="t-body c-ink">
-              PMO.az peşəkarları və təşkilatları layihə idarəetməsi ətrafında birləşdirir. Beynəlxalq təcrübəni yerli
-              ehtiyaclara uyğunlaşdırır, bilikləri praktik alət və yanaşmalarla tamamlayır.
+              PMO.az layihə idarəetməsi üzrə konsaltinq və məsləhət xidmətləri göstərir: PMO qurulması, portfel
+              idarəetməsi, layihələrin planlaşdırılması, monitorinqi və nəzarəti. Həm dəstəkverici, həm də birbaşa
+              layihələrdə iştirak edən PMO modelində işləyirik.
             </p>
             <p className="t-body c-muted">
-              Məqsədimiz Azərbaycanda layihə idarəetmə mədəniyyətini inkişaf etdirmək, metod və proseslərin sistemli
-              tətbiqinə dəstək olmaqdır.
+              Məqsədimiz təşkilatlarda davamlı və sistemli layihə mədəniyyəti formalaşdırmaqdır. Təlim və
+              sertifikasiya proqramlarımız da bu məqsədə xidmət edir.
             </p>
           </div>
           <figure className="figure">
@@ -119,8 +121,10 @@ export default async function AboutPage() {
       </section>
 
       <CtaBand
-        title="Birlikdə daha çoxuna nail olaq."
-        text="Komandanız, karyeranız və layihələriniz üçün yeni imkanlar."
+        title="Layihələriniz üçün etibarlı tərəfdaş axtarırsınız?"
+        text="Təşkilatınızın ehtiyacını bizimlə bölüşün, uyğun yanaşmanı birlikdə müəyyən edək."
+        label="Konsultasiya istəyin"
+        href="/contact#enquiry"
       />
     </div>
   );

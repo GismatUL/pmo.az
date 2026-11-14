@@ -5,15 +5,17 @@ namespace Database\Seeders\Support;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\Storage;
 
 /**
  * Helpers shared by the content seeders: reading the scraped pmo.az JSON,
- * publishing bundled images to the public disk, and idempotent
- * factory-backed upserts.
+ * pointing images at their live pmo.az URLs, and idempotent factory-backed
+ * upserts.
  */
 class SeedData
 {
+    /** Origin of the live site that hosts the scraped images. */
+    public const LIVE_ORIGIN = 'https://pmo.az';
+
     public static function json(string $name): array
     {
         return json_decode(File::get(database_path("seeders/data/{$name}.json")), true, flags: JSON_THROW_ON_ERROR);
@@ -28,8 +30,8 @@ class SeedData
     }
 
     /**
-     * Copy a bundled asset ("/images/news/x.jpg") to the public disk and
-     * return its disk path ("media/news/x.jpg"), or null when missing.
+     * Absolute live URL for a scraped image path ("/images/news/x.jpg" →
+     * "https://pmo.az/images/news/x.jpg"), with each segment URL-encoded.
      */
     public static function media(?string $livePath): ?string
     {
@@ -37,21 +39,9 @@ class SeedData
             return null;
         }
 
-        $relative = ltrim(preg_replace('#^/?images/#', '', $livePath), '/');
-        $source = database_path("seeders/assets/{$relative}");
+        $segments = array_map('rawurlencode', explode('/', ltrim($livePath, '/')));
 
-        if (! File::exists($source)) {
-            return null;
-        }
-
-        $target = 'media/'.$relative;
-        $disk = Storage::disk('public');
-
-        if (! $disk->exists($target)) {
-            $disk->put($target, File::get($source));
-        }
-
-        return $target;
+        return self::LIVE_ORIGIN.'/'.implode('/', $segments);
     }
 
     /**

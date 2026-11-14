@@ -6,21 +6,24 @@ import { ARROW } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Əlaqə",
-  description: "Proqram seçimi, korporativ təlim və ya konsaltinq — sizə uyğun istiqaməti birlikdə müəyyən edək.",
+  description: "Konsaltinq, PMO qurulması və ya korporativ təlim — ehtiyacınızı bizimlə bölüşün.",
 };
 
 const options = (CONTACT: Awaited<ReturnType<typeof getContact>>) => [
-  { label: "ZƏNG EDİN", value: CONTACT.phone, href: CONTACT.phoneHref, text: "Proqramlar və korporativ həllər haqqında danışaq." },
+  { label: "ZƏNG EDİN", value: CONTACT.phone, href: CONTACT.phoneHref, text: "Layihə idarəetməsi ehtiyacınız barədə danışaq." },
   { label: "BİZƏ YAZIN", value: CONTACT.email, href: `mailto:${CONTACT.email}`, text: "Müraciət və əməkdaşlıq təkliflərinizi gözləyirik." },
   { label: "İŞ SAATLARI", value: "09:00–18:00", text: "Bazar ertəsi – Cümə" },
 ];
 
 const FAQ = [
   [
+    "Konsaltinq əməkdaşlığı necə başlayır?",
+    "Müraciət formasında təşkilatınız və ehtiyacınız barədə qısa məlumat yazın. Komandamız sizinlə əlaqə saxlayıb ilkin görüş təyin edir.",
+  ],
+  [
     "Proqrama necə qeydiyyatdan keçə bilərəm?",
     "Proqramlar bölməsindən uyğun istiqaməti seçin. Proqram detalları və qeydiyyat üçün pmu.az saytına keçid edilir.",
   ],
-  ["Videodərslərə haradan daxil olum?", "Videokurslar və təlim materialları üçün edu.pmo.az platformasına keçin."],
   [
     "Korporativ təlim üçün necə müraciət edim?",
     "Komandanızın ehtiyacını müraciət formasında qeyd edin və ya info@pmo.az ünvanına yazın.",
@@ -43,7 +46,7 @@ export default async function ContactPage() {
             inkişaf edək.
           </>
         }
-        intro="Proqram seçimi, korporativ təlim və ya konsaltinq — sizə uyğun istiqaməti birlikdə müəyyən edək."
+        intro="Konsaltinq, PMO qurulması və ya korporativ təlim — ehtiyacınızı bölüşün, uyğun yanaşmanı birlikdə müəyyən edək."
       />
 
       {/* Contact options — 16:69 */}
@@ -75,8 +78,8 @@ export default async function ContactPage() {
               göndərin.
             </h2>
             <p className="t-body">
-              Məqsədinizi və ehtiyacınızı qısa şəkildə paylaşın. Sizə uyğun proqram və ya xidmət haqqında əlaqə
-              saxlayaq.
+              Təşkilatınızı və layihə idarəetməsi ilə bağlı ehtiyacınızı qısa şəkildə yazın. Uyğun xidmət barədə
+              sizinlə əlaqə saxlayaq.
             </p>
             <ul className="t-body">
               <li>Fərdi inkişaf</li>

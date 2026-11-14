@@ -285,6 +285,10 @@
   gap: 24px;
   align-items: flex-start;
 }
+/* Five steps share the row: smaller titles keep words like "Qiymətləndirmə" whole. */
+.steps--5 .step .t-h2 {
+  font-size: 26px;
+}
 .step {
   display: flex;
   flex: 1 1 0;

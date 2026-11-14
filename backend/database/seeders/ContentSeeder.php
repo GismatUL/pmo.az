@@ -188,7 +188,7 @@ class ContentSeeder extends Seeder
         foreach (SeedData::json('partners') as $i => $logo) {
             $name = collect($names)->first(fn ($n, $needle) => str_contains($logo, $needle)) ?? 'Tərəfdaş '.($i + 1);
 
-            SeedData::upsert(Partner::class, ['logo'], [
+            SeedData::upsert(Partner::class, ['name'], [
                 'name' => $name,
                 'type' => in_array($name, ['AzPMA', 'QazPMA'], true) ? 'accreditation' : 'partner',
                 'logo' => SeedData::media($logo),

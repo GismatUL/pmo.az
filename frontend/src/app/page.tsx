@@ -1,20 +1,25 @@
 import Link from "next/link";
 import { LinkButton, TextLink } from "@/components/Button";
 import { EnquiryForm } from "@/components/EnquiryForm";
-import { ProgramFilter } from "@/components/ProgramFilter";
-import { getBooks, getContact, getFeaturedPost, getFeaturedPrograms, getPosts, getServices, getStats } from "@/lib/api";
-import { longDate } from "@/lib/posts";
+import { getContact, getFeaturedPost, getPosts, getServices, getStats } from "@/lib/api";
 import { asset } from "@/lib/asset";
+import { longDate } from "@/lib/posts";
+import { APPROACH, EXPERIENCE, VALUE } from "@/lib/services";
 
-const PARTNERS = ["IPMA / AzPMA", "GPM Global", "PeopleCert", "APMG International", "PMI imtahan hazırlığı"];
+const STANDARDS = ["ISO 21500 / 21502", "IPMA ICB4 · Delta®", "ISO 10006", "GPM P5 · GPM360®", "APMG · PeopleCert"];
+
+const TRAINING = [
+  ["Korporativ təlimlər", "Komandanızın ehtiyacına uyğun proqramlar"],
+  ["Sertifikasiya hazırlığı", "IPMA ICB4, PRINCE2®, PMP® və digərləri"],
+  ["Videokurslar", "edu.pmo.az platformasında"],
+  ["Kitablar və iş dəftərləri", "pmbook.az"],
+];
 
 export default async function HomePage() {
-  const [stats, programs, { pillars }, posts, books, contact] = await Promise.all([
+  const [stats, { consulting }, posts, contact] = await Promise.all([
     getStats(),
-    getFeaturedPrograms(),
     getServices(),
     getPosts(),
-    getBooks(),
     getContact(),
   ]);
   const news = await getFeaturedPost(posts);
@@ -25,35 +30,35 @@ export default async function HomePage() {
       <section className="section bg-green home-hero">
         <div className="home-hero__story">
           <div className="home-hero__copy">
-            <p className="eyebrow">LAYİHƏ DÜŞÜNCƏ MƏKTƏBİ</p>
+            <p className="eyebrow">LAYİHƏ İDARƏETMƏSİ ÜZRƏ KONSALTİNQ</p>
             <h1 className="home-hero__title">
-              Layihə düşüncəsi.
+              Strategiyadan icraya.
               <br />
-              Beynəlxalq təcrübə.
+              Sistemli idarəetmə.
               <br />
-              Real nəticələr.
+              Nəzarətdə layihələr.
             </h1>
             <p className="home-hero__lead">
-              Peşəkar inkişafınızdan təşkilatınızın transformasiyasına — təlim, sertifikasiya və konsaltinq ilə
-              yanınızdayıq.
+              Təşkilatlara PMO qurmağa, layihə portfelini idarə etməyə və mürəkkəb layihələri strateji məqsədlərə
+              uyğun icra etməyə kömək edirik.
             </p>
             <div className="home-hero__actions">
-              <LinkButton href="/programs" label="Proqramları kəşf et" />
-              <TextLink className="light" href="/services" label="Korporativ həllər" />
+              <LinkButton href="/services" label="Xidmətlərlə tanış olun" />
+              <TextLink className="light" href="#contact" label="Konsultasiya istəyin" />
             </div>
           </div>
           <figure className="photo-card">
             <img
               className="photo-card__img"
               src={asset("/images/hero-workshop.jpg")}
-              alt="PMO.az iştirakçıları ADA Universitetində təlimdə"
+              alt="PMO.az komandasının keçirdiyi praktik layihə idarəetmə sessiyası"
               width={1600}
               height={900}
               fetchPriority="high"
             />
             <figcaption className="photo-card__caption">
-              <span>BİLİKDƏN TƏCRÜBƏYƏ</span>
-              <strong>Birlikdə öyrənirik. Birlikdə inkişaf edirik.</strong>
+              <span>KOMANDANIZLA BİRLİKDƏ</span>
+              <strong>Metodologiyanı gündəlik işə çeviririk.</strong>
             </figcaption>
           </figure>
         </div>
@@ -67,55 +72,40 @@ export default async function HomePage() {
         </dl>
       </section>
 
-      {/* Trust — Figma 10:5 */}
-      <section className="trust" aria-label="Akkreditasiya və tərəfdaşlar">
-        <p className="eyebrow">BEYNƏLXALQ STANDARTLAR. YERLİ EKSPERTİZA.</p>
+      {/* Standards — Figma 10:5 */}
+      <section className="trust" aria-label="Standartlar və beynəlxalq tərəfdaşlar">
+        <p className="eyebrow">BEYNƏLXALQ STANDARTLARA ƏSASLANAN YANAŞMA</p>
         <ul className="trust__list">
-          {PARTNERS.map((p) => (
+          {STANDARDS.map((p) => (
             <li key={p}>{p}</li>
           ))}
         </ul>
       </section>
 
-      {/* Programs — Figma 10:6 */}
-      <section className="section bg-cream home-programs" id="programs">
-        <p className="eyebrow">01 / PEŞƏKAR İNKİŞAF</p>
-        <div className="section-head">
-          <h2 className="h-section">
-            Növbəti addımınız
-            <br />
-            buradan başlayır.
-          </h2>
-          <TextLink href="/programs" label="Bütün proqramlar" />
-        </div>
-        <ProgramFilter programs={programs} />
-        <p className="footnote">Proqram detalları və qeydiyyat üçün pmu.az saytına keçid edilir.</p>
-      </section>
-
-      {/* Services — Figma 10:7 */}
-      <section className="section bg-green home-services">
-        <p className="eyebrow">02 / TƏŞKİLATLAR ÜÇÜN</p>
+      {/* Consulting services — Figma 10:7 layout */}
+      <section className="section bg-green home-services" id="services">
+        <p className="eyebrow">01 / KONSALTİNQ XİDMƏTLƏRİ</p>
         <div className="home-services__body">
           <div className="home-services__intro">
             <h2 className="h-section">
-              Təkcə öyrətmirik.
+              Layihələrinizi
               <br />
-              Birlikdə tətbiq edirik.
+              sistemlə idarə edin.
             </h2>
             <p className="lead">
-              Komandanızın potensialını gücləndirin, proseslərinizi təkmilləşdirin və layihələriniz üçün ölçülə bilən
-              dəyər yaradın.
+              Layihə idarəetməsini ayrı-ayrı təşəbbüslərdən təşkilatın idarəetmə sisteminə çeviririk: aydın qaydalar,
+              şəffaf hesabatlılıq və vaxtında qəbul edilən qərarlar.
             </p>
-            <TextLink href="/contact" label="Konsultasiya üçün müraciət et" />
+            <TextLink href="/services" label="Bütün xidmətlər" />
           </div>
           <ul className="service-lines">
-            {pillars.map(({ n, title, homeText: text, href }) => (
-              <li key={n}>
-                <Link className="service-line" href={href}>
+            {consulting.slice(0, 5).map(({ n, slug, title, summary }) => (
+              <li key={slug}>
+                <Link className="service-line" href={`/services/${slug}`}>
                   <span className="service-line__num">{n}</span>
                   <span className="service-line__copy">
                     <strong>{title}</strong>
-                    <span>{text}</span>
+                    <span>{summary}</span>
                   </span>
                   <span className="service-line__arrow" aria-hidden="true">
                     ↗
@@ -127,15 +117,60 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* Case study — Figma 10:8 */}
+      {/* Why — value of professional project management */}
+      <section className="section bg-cream home-why">
+        <p className="eyebrow">02 / NİYƏ PEŞƏKAR LAYİHƏ İDARƏETMƏSİ</p>
+        <div className="section-head">
+          <h2 className="h-section">
+            Yaxşı ideya kifayət deyil.
+            <br />
+            Nəticəni icra müəyyən edir.
+          </h2>
+        </div>
+        <p className="lead home-why__lead">
+          PMO.az beynəlxalq standartları yerli təcrübə ilə birləşdirir. Komandamız layihə, proqram və portfel
+          idarəetməsi üzrə milli standartların hazırlanmasında iştirak edib, IPMA, GPM Global və APMG ilə əməkdaşlıq
+          edir.
+        </p>
+        <div className="card-row">
+          {VALUE.map(([title, text], i) => (
+            <article className="pillar-card" key={title}>
+              <p className="t-label c-muted">{String(i + 1).padStart(2, "0")}</p>
+              <h3 className="home-card__title">{title}</h3>
+              <p className="t-body c-muted">{text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* Approach */}
+      <section className="section bg-green home-approach">
+        <p className="eyebrow">03 / YANAŞMAMIZ</p>
+        <h2 className="h-section">
+          Əvvəl anlayırıq.
+          <br />
+          Sonra birlikdə tətbiq edirik.
+        </h2>
+        <ol className="col-row home-approach__steps">
+          {APPROACH.map(([title, text], i) => (
+            <li className="col-item" key={title}>
+              <p className="t-label c-lime">{String(i + 1).padStart(2, "0")}</p>
+              <h3 className="home-card__title c-white">{title}</h3>
+              <p className="t-body c-cream">{text}</p>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      {/* Experience — Figma 10:8 case study + selected engagements */}
       <section className="section bg-pale home-case">
-        <p className="eyebrow">03 / GREENPM · TƏCRÜBƏDƏ DAYANIQLILIQ</p>
+        <p className="eyebrow">04 / TƏCRÜBƏ</p>
         <div className="home-case__body">
           <div className="home-case__story">
             <h2 className="h-section">
-              Dayanıqlılıq,
+              Real təşkilatlar.
               <br />
-              real layihələrdə.
+              Real layihələr.
             </h2>
             <h3 className="home-case__project">
               Hilton Garden Inn Baku
@@ -143,7 +178,7 @@ export default async function HomePage() {
               by PMD Projects
             </h3>
             <p className="lead">
-              GPM360 yanaşması ilə layihənin insanlara, planetə və rifaha təsirinin qiymətləndirilməsi və
+              GPM360® modeli ilə layihənin insanlara, planetə və rifaha təsirinin qiymətləndirilməsi və
               sertifikatlaşdırılması.
             </p>
             <TextLink href="https://greenpm.az" label="Layihə ilə tanış ol" />
@@ -161,17 +196,25 @@ export default async function HomePage() {
             <TextLink className="light" href="https://greenpm.az" label="GreenPM haqqında daha çox" />
           </div>
         </div>
+        <div className="card-row">
+          {EXPERIENCE.map(([title, text]) => (
+            <article className="pillar-card" key={title}>
+              <h3 className="home-card__title">{title}</h3>
+              <p className="t-body c-muted">{text}</p>
+            </article>
+          ))}
+        </div>
       </section>
 
-      {/* Knowledge — Figma 10:9 */}
+      {/* Training and knowledge — secondary offering (Figma 10:9 layout) */}
       <section className="section bg-cream home-knowledge" id="learning">
-        <p className="eyebrow">04 / BİLİK VƏ İCMA</p>
-        <h2 className="h-section">Öyrənməyə davam edin.</h2>
+        <p className="eyebrow">05 / TƏLİM VƏ BİLİK</p>
+        <h2 className="h-section">Komandanızın inkişafı üçün.</h2>
         <div className="home-knowledge__body">
           <article className="news-feature">
             <img
               className="news-feature__img"
-              src={asset(news.image ?? "/images/news-avrora.jpg")}
+              src={asset(news.image ?? "https://pmo.az/images/news/pmoaz-news-1_1782123411.jpg")}
               alt={news.imageCaption ?? news.title}
               width={1600}
               height={900}
@@ -182,47 +225,39 @@ export default async function HomePage() {
             <TextLink href={`/blog/${news.slug}`} label="Xəbəri oxu" />
           </article>
           <div className="books">
-            <p className="eyebrow">KİTABLAR VƏ İŞ DƏFTƏRLƏRİ</p>
+            <p className="eyebrow">TƏLİM VƏ SERTİFİKASİYA</p>
             <h3 className="books__title">
-              Təcrübəniz üçün
+              Konsaltinqi tamamlayan
               <br />
-              masaüstü mənbələr.
+              proqramlar.
             </h3>
             <ul className="books__list">
-              {books.map(({ title, format, price }) => (
+              {TRAINING.map(([title, text]) => (
                 <li key={title}>
                   <span>
                     <strong>{title}</strong>
-                    <small>{format}</small>
+                    <small>{text}</small>
                   </span>
-                  <b>{price}</b>
                 </li>
               ))}
             </ul>
-            <TextLink href="https://pmbook.az" label="Bütün kitablar" />
+            <TextLink href="/programs" label="Təlim proqramları" />
           </div>
-        </div>
-        <div className="learn-banner">
-          <div className="learn-banner__copy">
-            <p className="learn-banner__eyebrow">EDU.PMO.AZ / VİDEOKURSLAR</p>
-            <p className="learn-banner__title">Öz tempinizdə, hər yerdən öyrənin.</p>
-            <p className="learn-banner__text">Videodərslər, praktik materiallar və testlər bir platformada.</p>
-          </div>
-          <LinkButton variant="secondary" href="https://edu.pmo.az" label="Platformaya keç" />
         </div>
       </section>
 
       {/* Contact — Figma 10:10 */}
       <section className="section bg-lime home-contact" id="contact">
         <div className="home-contact__intro">
-          <p className="eyebrow">05 / BİRLİKDƏ İNKİŞAF EDƏK</p>
+          <p className="eyebrow">06 / KONSULTASİYA</p>
           <h2 className="home-contact__title">
-            Növbəti layihəniz
+            Layihə ehtiyacınızı
             <br />
-            haqqında danışaq.
+            müzakirə edək.
           </h2>
           <p className="home-contact__lead">
-            Sizə uyğun proqramı və ya təşkilatınız üçün doğru həlli birlikdə müəyyən edək.
+            PMO qurmaq, portfeli prioritetləşdirmək və ya mürəkkəb layihəni nəzarətə götürmək — vəziyyətinizi qısaca
+            yazın, uyğun yanaşmanı birlikdə müəyyən edək.
           </p>
           <a className="home-contact__phone" href={contact.phoneHref}>
             {contact.phone}
@@ -231,7 +266,13 @@ export default async function HomePage() {
             {contact.email}
           </a>
         </div>
-        <EnquiryForm source="home" className="home-contact__form" />
+        <EnquiryForm
+          source="home"
+          className="home-contact__form"
+          fields={["name", "company", "email", "message"]}
+          submitLabel="Konsultasiya istəyin"
+          messagePlaceholder="Təşkilatınız və layihə idarəetməsi ilə bağlı ehtiyacınız"
+        />
       </section>
     </>
   );
