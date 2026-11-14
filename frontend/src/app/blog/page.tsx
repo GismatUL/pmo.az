@@ -7,6 +7,7 @@ import { PageHero } from "@/components/PageHero";
 import { getFeaturedPost, getPosts } from "@/lib/api";
 import { shortDate } from "@/lib/posts";
 import { ARROW } from "@/lib/site";
+import { asset } from "@/lib/asset";
 
 export const metadata: Metadata = {
   title: "Bloq",
@@ -38,7 +39,7 @@ export default async function BlogPage() {
         <p className="t-label c-muted">SEÇİLMİŞ YAZI</p>
         <article className="featured-post">
           <Link href={`/blog/${featured.slug}`} className="featured-post__media" tabIndex={-1}>
-            <img src={featured.image} alt={featured.imageCaption ?? featured.title} width={1600} height={900} />
+            <img src={asset(featured.image)} alt={featured.imageCaption ?? featured.title} width={1600} height={900} />
           </Link>
           <div className="featured-post__copy">
             <p className="t-label c-muted">{`${featured.kind}  /  ${shortDate(featured.date)}`}</p>

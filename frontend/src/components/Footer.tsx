@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { getContact, getLinks } from "@/lib/api";
 import { ARROW, ECOSYSTEM } from "@/lib/site";
+import { asset } from "@/lib/asset";
 
 const EXPLORE = [
   { label: "Proqramlar", href: "/programs" },
@@ -22,7 +23,7 @@ export async function Footer() {
     <footer className="site-footer">
       <div className="site-footer__nav">
         <div className="site-footer__brand">
-          <img src="/images/logo.png" alt="PMO.az" width={150} height={58} loading="lazy" />
+          <img src={asset("/images/logo.png")} alt="PMO.az" width={150} height={58} loading="lazy" />
           <p className="site-footer__tagline">
             Beynəlxalq təcrübə.
             <br />

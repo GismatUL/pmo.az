@@ -4,6 +4,7 @@ import { EnquiryForm } from "@/components/EnquiryForm";
 import { ProgramFilter } from "@/components/ProgramFilter";
 import { getBooks, getContact, getFeaturedPost, getFeaturedPrograms, getPosts, getServices, getStats } from "@/lib/api";
 import { longDate } from "@/lib/posts";
+import { asset } from "@/lib/asset";
 
 const PARTNERS = ["IPMA / AzPMA", "GPM Global", "PeopleCert", "APMG International", "PMI imtahan hazırlığı"];
 
@@ -44,7 +45,7 @@ export default async function HomePage() {
           <figure className="photo-card">
             <img
               className="photo-card__img"
-              src="/images/hero-workshop.jpg"
+              src={asset("/images/hero-workshop.jpg")}
               alt="PMO.az iştirakçıları ADA Universitetində təlimdə"
               width={1600}
               height={900}
@@ -170,7 +171,7 @@ export default async function HomePage() {
           <article className="news-feature">
             <img
               className="news-feature__img"
-              src={news.image ?? "/images/news-avrora.jpg"}
+              src={asset(news.image ?? "/images/news-avrora.jpg")}
               alt={news.imageCaption ?? news.title}
               width={1600}
               height={900}

@@ -8,6 +8,7 @@ import { ProgramCard } from "@/components/ProgramCard";
 import { ShareLinks } from "@/components/ShareLinks";
 import { getPostWithRelated, getPosts } from "@/lib/api";
 import { longDate, shortDate } from "@/lib/posts";
+import { asset } from "@/lib/asset";
 
 type Params = { params: Promise<{ slug: string }> };
 
@@ -46,7 +47,7 @@ export default async function BlogPostPage({ params }: Params) {
       <section className="section bg-cream article-body">
         {post.image && (
           <figure className="article-figure">
-            <img src={post.image} alt={post.imageCaption ?? post.title} width={1600} height={900} />
+            <img src={asset(post.image)} alt={post.imageCaption ?? post.title} width={1600} height={900} />
             {post.imageCaption && <figcaption className="t-label c-muted">{post.imageCaption}</figcaption>}
           </figure>
         )}
@@ -55,7 +56,7 @@ export default async function BlogPostPage({ params }: Params) {
             {post.body?.length ? (
               post.body.map((b, i) =>
                 b.type === "image" ? (
-                  <img className="article-inline-img" key={i} src={b.src} alt={b.alt ?? ""} loading="lazy" />
+                  <img className="article-inline-img" key={i} src={asset(b.src)} alt={b.alt ?? ""} loading="lazy" />
                 ) : b.type === "h2" ? (
                   <h2 className="t-h2" key={i}>
                     {b.text}

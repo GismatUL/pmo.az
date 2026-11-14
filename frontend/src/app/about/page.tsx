@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { CtaBand } from "@/components/CtaBand";
 import { PageHero } from "@/components/PageHero";
 import { getStats } from "@/lib/api";
+import { asset } from "@/lib/asset";
 
 export const metadata: Metadata = {
   title: "Haqqımızda",
@@ -58,7 +59,7 @@ export default async function AboutPage() {
           </div>
           <figure className="figure">
             <img
-              src="/images/hero-workshop.jpg"
+              src={asset("/images/hero-workshop.jpg")}
               alt="ADA Universitetinin tələbələri ilə PM Game workshop-u"
               width={1600}
               height={900}

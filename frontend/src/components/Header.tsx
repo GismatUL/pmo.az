@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { ARROW, NAV } from "@/lib/site";
+import { asset } from "@/lib/asset";
 
 export function Header() {
   const pathname = usePathname();
@@ -16,7 +17,7 @@ export function Header() {
   return (
     <header className={`site-header ${pathname === "/" ? "" : "site-header--inner"}`}>
       <Link className="site-header__logo" href="/" aria-label="PMO.az — ana səhifə">
-        <img src="/images/logo.png" alt="PMO.az — layihə düşüncə məktəbi" width={136} height={52} />
+        <img src={asset("/images/logo.png")} alt="PMO.az — layihə düşüncə məktəbi" width={136} height={52} />
       </Link>
 
       <nav className="site-nav" aria-label="Əsas naviqasiya">

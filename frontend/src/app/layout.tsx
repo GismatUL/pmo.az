@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { asset } from "@/lib/asset";
 import "@/styles/base.css";
 import "@/styles/components.css";
 import "@/styles/pages.css";
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
   title: { default: "PMO.az — Layihə düşüncə məktəbi", template: "%s — PMO.az" },
   description:
     "Peşəkar inkişafınızdan təşkilatınızın transformasiyasına — təlim, sertifikasiya və konsaltinq ilə yanınızdayıq.",
-  icons: { icon: "/favicon.png" },
+  icons: { icon: asset("/favicon.png") },
 };
 
 export const viewport: Viewport = {
