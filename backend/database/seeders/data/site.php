@@ -24,10 +24,10 @@ return [
     ],
 
     'stats' => [
-        ['2000+', 'məzun'],
-        ['500+', 'sertifikasiya'],
         ['100+', 'həyata keçirilən layihə'],
         ['50+', 'ekspert və təlimçi'],
+        ['500+', 'sertifikasiya'],
+        ['2000+', 'məzun'],
     ],
 
     // Programs catalogue (Figma Programs 16:329) + home featured copy (Figma Home 10:6).
@@ -68,31 +68,33 @@ return [
     ],
 
     // Service pillars (Figma Services 16:155 + Home 10:7). Body text comes from the live site.
+    // Lines of business, consulting first.
     'pillars' => [
         [
-            'slug' => 'telimler', 'live' => 'telimler', 'title' => 'Təlimlər',
-            'summary' => 'Peşəkar bilikləri praktik təcrübəyə çevirən proqramlar.',
-            'home_summary' => 'Komandanızın ehtiyaclarına uyğun korporativ proqramlar.',
-            'highlights' => ['Beynəlxalq sertifikasiya hazırlığı', 'Korporativ təlimlər', 'Praktik və oyun əsaslı proqramlar'],
-            'link_label' => 'Proqramlara bax', 'link_url' => '/programs',
-        ],
-        [
-            'slug' => 'sertifikasiya', 'live' => 'sertifikasiya', 'title' => 'Sertifikasiya',
-            'summary' => 'Peşəkarlar, layihələr və təşkilatlar üçün qiymətləndirmə.',
-            'home_summary' => 'Peşəkarlar, layihələr və təşkilatlar üçün beynəlxalq yanaşmalar.',
-            'highlights' => ['IPMA və digər beynəlxalq istiqamətlər', 'Layihələr üçün GPM360®', 'Təşkilatlar üçün IPMA Delta® və PSM3'],
-            'link_label' => 'Daha ətraflı', 'link_url' => '/services/dayaniqli-layihe-menecmenti',
-        ],
-        [
-            'slug' => 'tetbiq', 'live' => 'tedbiq', 'title' => 'Tətbiq',
-            'summary' => 'Layihə idarəetməsini təşkilatınızın gündəlik işinə inteqrasiya edin.',
-            'home_summary' => 'PMO qurulması, layihə dəstəyi və dəyişikliklərin idarə edilməsi.',
-            'highlights' => ['PMO qurulması və inkişafı', 'Layihə və proqram dəstəyi', 'Transformasiya və dəyişikliklər'],
+            'slug' => 'tetbiq', 'live' => 'tedbiq', 'title' => 'Konsaltinq və tətbiq',
+            'summary' => 'Layihə idarəetməsini təşkilatınızın idarəetmə sisteminə və gündəlik işinə inteqrasiya edirik.',
+            'home_summary' => 'PMO qurulması, portfel idarəetməsi, layihə dəstəyi və transformasiya.',
+            'highlights' => ['PMO qurulması və portfel idarəetməsi', 'Layihə və proqram idarəetmə dəstəyi', 'İdarəetmə sistemi və transformasiya'],
             'link_label' => 'Konsaltinqə bax', 'link_url' => '/services#consulting',
+        ],
+        [
+            'slug' => 'sertifikasiya', 'live' => 'sertifikasiya', 'title' => 'Qiymətləndirmə və sertifikasiya',
+            'summary' => 'Layihələrin və təşkilatların beynəlxalq meyarlarla qiymətləndirilməsi.',
+            'home_summary' => 'Təşkilatlar, layihələr və peşəkarlar üçün beynəlxalq yanaşmalar.',
+            'highlights' => ['Təşkilatlar üçün IPMA Delta® və ISO 10006', 'Layihələr üçün GPM360®', 'Peşəkarlar üçün beynəlxalq sertifikasiya'],
+            'link_label' => 'Daha ətraflı', 'link_url' => '/services/yetkinlik-qiymetlendirmesi',
+        ],
+        [
+            'slug' => 'telimler', 'live' => 'telimler', 'title' => 'Təlimlər',
+            'summary' => 'Komandaların layihə idarəetmə bacarıqlarını gücləndirən proqramlar.',
+            'home_summary' => 'Komandanızın ehtiyaclarına uyğun korporativ proqramlar.',
+            'highlights' => ['Korporativ təlimlər', 'Beynəlxalq sertifikasiya hazırlığı', 'Praktik və oyun əsaslı proqramlar'],
+            'link_label' => 'Təlim proqramları', 'link_url' => '/programs',
         ],
     ],
 
-    // Consulting areas (Figma Services 16:156) and PMO detail page (Figma 16:568).
+    // Consulting services in order of priority (Figma Services 16:156) and the
+    // PMO detail page (Figma 16:568). The first five are featured on the home page.
     'consulting' => [
         [
             'slug' => 'pmo-qurulmasi', 'title' => 'PMO qurulması və inkişafı', 'crumb' => 'PMO qurulması',
@@ -126,20 +128,39 @@ return [
             ],
         ],
         [
+            'slug' => 'portfel-idareetmesi', 'title' => 'Layihə portfelinin idarə edilməsi', 'crumb' => 'Portfel idarəetməsi',
+            'summary' => 'Layihələrin strateji məqsədlərə görə seçilməsi, prioritetləşdirilməsi və resursların balanslaşdırılması.',
+            'intro' => 'Hansı layihəyə başlamaq, hansını dayandırmaq barədə qərarları aydın meyarlara əsaslandırırıq: seçim və prioritetləşdirmə qaydaları, resurs planlaması və rəhbərlik üçün portfel hesabatları.',
+        ],
+        [
             'slug' => 'layihe-ve-proqram-desteyi', 'title' => 'Layihə və proqram idarəetmə dəstəyi', 'crumb' => 'Layihə və proqram dəstəyi',
-            'summary' => 'Layihə sənədləri, risklər, maraqlı tərəflər və hesabatlılıq üzrə metodoloji dəstək.',
+            'summary' => 'Planlaşdırma, monitorinq və nəzarət: cədvəl, risklər, maraqlı tərəflər, satınalma və hesabatlılıq.',
+            'intro' => 'Böyük və mürəkkəb layihələrdə komandanızın yanındayıq: layihə sənədlərini strukturlaşdırır, risk, maraqlı tərəf, satınalma və hesabat sistemlərini qurur, audit və diaqnostik qiymətləndirmə ilə icranı nəzarətdə saxlayırıq.',
+        ],
+        [
+            'slug' => 'idareetme-sistemi', 'title' => 'Layihə idarəetmə sistemi və governance', 'crumb' => 'İdarəetmə sistemi',
+            'summary' => 'Rollar, səlahiyyətlər, qərarvermə səviyyələri və mərhələ nəzarət nöqtələri ilə vahid idarəetmə çərçivəsi.',
+            'intro' => 'Layihələrin necə başladığını, kim tərəfindən təsdiqləndiyini və necə izlənildiyini müəyyən edən qaydaları hazırlayırıq: rollar və səlahiyyətlər, mərhələ qərarları, sənəd standartları və hesabat ritmi. Çərçivəni ISO 21500 / 21502 prinsiplərinə və təşkilatınızın strukturuna uyğunlaşdırırıq.',
+        ],
+        [
+            'slug' => 'yetkinlik-qiymetlendirmesi', 'title' => 'Layihə idarəetmə yetkinliyinin qiymətləndirilməsi', 'crumb' => 'Yetkinlik qiymətləndirməsi',
+            'summary' => 'IPMA Delta® və ISO 10006 yanaşmaları ilə təşkilatın layihə idarəetmə qabiliyyətinin diaqnostikası.',
+            'intro' => 'Təşkilatın layihə idarəetmə qabiliyyətini beynəlxalq meyarlarla ölçür, güclü və zəif tərəfləri müəyyən edir, prioritetləşdirilmiş inkişaf planı hazırlayırıq. Yanaşma IPMA Delta® modelinə və ISO 10006 keyfiyyət menecmenti prinsiplərinə əsaslanır.',
         ],
         [
             'slug' => 'dayaniqli-layihe-menecmenti', 'title' => 'Dayanıqlı layihə menecmenti', 'crumb' => 'Dayanıqlı layihə menecmenti',
-            'summary' => 'GPM P5 yanaşmasının tətbiqi, dayanıqlılığın qiymətləndirilməsi və GPM360.',
+            'summary' => 'GPM P5 yanaşmasının tətbiqi, dayanıqlılığın qiymətləndirilməsi və GPM360®.',
+            'intro' => 'Layihələrin ekoloji, sosial və iqtisadi təsirini GPM P5 yanaşması ilə idarə etməyə və GPM360® modeli ilə qiymətləndirməyə kömək edirik. Layihə strukturunu ESG və SDG tələblərinə uyğunlaşdırırıq.',
         ],
         [
             'slug' => 'dot-ppp', 'title' => 'DÖT / PPP məsləhətçiliyi', 'crumb' => 'DÖT / PPP',
             'summary' => 'Dövlət-özəl tərəfdaşlığı layihələrinin qiymətləndirilməsi və strukturlaşdırılması.',
+            'intro' => 'Dövlət-özəl tərəfdaşlığı layihələrinin strukturlaşdırılması, biznes modellərinin hazırlanması və beynəlxalq standartlara uyğun layihə çərçivələrinin qurulması üzrə məsləhət veririk.',
         ],
         [
             'slug' => 'transformasiya', 'title' => 'Transformasiya və dəyişikliklər', 'crumb' => 'Transformasiya',
             'summary' => 'Dəyişikliklərin idarə edilməsi və təşkilati transformasiyaya metodoloji dəstək.',
+            'intro' => 'Təşkilati dəyişiklikləri layihə kimi idarə edirik: Change Management yanaşmasının tətbiqi, transformasiya layihələrinə metodoloji dəstək və rəhbərlərin dəyişiklik kompetensiyalarının gücləndirilməsi.',
         ],
     ],
 

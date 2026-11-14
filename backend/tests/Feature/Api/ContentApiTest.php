@@ -28,14 +28,17 @@ class ContentApiTest extends TestCase
             ->assertOk()
             ->assertJsonPath('data.settings.email', 'info@pmo.az')
             ->assertJsonCount(4, 'data.stats')
-            ->assertJsonPath('data.stats.0.value', '2000+');
+            ->assertJsonPath('data.stats.0.value', '100+');
 
         $this->getJson('/api/v1/programs')->assertOk()->assertJsonCount(6, 'data');
         $this->getJson('/api/v1/programs?featured=1')->assertOk()->assertJsonCount(3, 'data')
             ->assertJsonPath('data.0.title', 'IPMA ICB4');
         $this->getJson('/api/v1/services')->assertOk()
             ->assertJsonCount(3, 'data.pillars')
-            ->assertJsonCount(5, 'data.consulting');
+            ->assertJsonPath('data.pillars.0.slug', 'tetbiq')
+            ->assertJsonCount(8, 'data.consulting')
+            ->assertJsonPath('data.consulting.0.slug', 'pmo-qurulmasi')
+            ->assertJsonPath('data.consulting.1.slug', 'portfel-idareetmesi');
         $this->getJson('/api/v1/experts')->assertOk()->assertJsonPath('data.0.slug', 'resad-ibrahimov');
         $this->getJson('/api/v1/books')->assertOk()->assertJsonPath('data.0.price', 60);
     }

@@ -3,19 +3,14 @@ import Link from "next/link";
 import { CtaBand } from "@/components/CtaBand";
 import { PageHero } from "@/components/PageHero";
 import { getServices } from "@/lib/api";
+import { APPROACH } from "@/lib/services";
 import { ARROW } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Xidmətlər",
-  description: "Peşəkarlar, layihələr və şirkətlər üçün təlim, sertifikasiya və konsaltinq həlləri.",
+  description:
+    "PMO qurulması, portfel idarəetməsi, layihələrin planlaşdırılması, monitorinqi və nəzarəti üzrə konsaltinq xidmətləri.",
 };
-
-const STEPS = [
-  ["01", "Təhlil", "Ehtiyacları, mövcud vəziyyəti və məqsədləri müəyyən edirik."],
-  ["02", "Həll", "Məqsədə uyğun yanaşma və fəaliyyət istiqamətlərini seçirik."],
-  ["03", "Tətbiq", "Komandanızla birlikdə metodologiyanı praktikaya keçiririk."],
-  ["04", "İnkişaf", "Öyrənilən dərslər əsasında prosesi təkmilləşdiririk."],
-];
 
 export default async function ServicesPage() {
   const { pillars, consulting } = await getServices();
@@ -26,17 +21,17 @@ export default async function ServicesPage() {
         crumb="Xidmətlər"
         title={
           <>
-            Bilikdən tətbiqə.
+            Layihə idarəetməsi
             <br />
-            Tətbiqdən nəticəyə.
+            üzrə konsaltinq.
           </>
         }
-        intro="Peşəkarlar, layihələr və şirkətlər üçün təlim, sertifikasiya və konsaltinq həlləri."
+        intro="PMO qurulmasından portfel idarəetməsinə — layihələrinizin strateji məqsədlərə uyğun və nəzarət altında icrası üçün xidmətlər."
       />
 
       {/* Service pillars — 16:155 */}
       <section className="section bg-cream stack-32">
-        <h2 className="t-h1 c-ink">Üç istiqamət. Vahid yanaşma.</h2>
+        <h2 className="t-h1 c-ink">Üç istiqamət. Mərkəzdə konsaltinq.</h2>
         <div className="card-row">
           {pillars.map((p) => (
             <article className="pillar-card" key={p.n}>
@@ -58,7 +53,7 @@ export default async function ServicesPage() {
 
       {/* Consulting areas — 16:156 */}
       <section className="section bg-green stack-32" id="consulting">
-        <p className="t-label c-lime">KONSALTİNQ VƏ TƏTBİQ</p>
+        <p className="t-label c-lime">KONSALTİNQ XİDMƏTLƏRİ</p>
         <h2 className="t-h1 c-white">Təşkilatınıza uyğun həllər</h2>
         {consulting.map((s) => (
           <div className="area-row" key={s.slug}>
@@ -78,11 +73,11 @@ export default async function ServicesPage() {
 
       {/* Approach — 16:157 */}
       <section className="section bg-cream stack-32">
-        <h2 className="t-h1 c-ink">Əvvəl anlayırıq. Sonra hərəkət edirik.</h2>
-        <ol className="steps">
-          {STEPS.map(([n, title, text]) => (
-            <li className="step" key={n}>
-              <p className="t-h1 c-muted">{n}</p>
+        <h2 className="t-h1 c-ink">Əvvəl anlayırıq. Sonra birlikdə tətbiq edirik.</h2>
+        <ol className="steps steps--5">
+          {APPROACH.map(([title, text], i) => (
+            <li className="step" key={title}>
+              <p className="t-h1 c-muted">{String(i + 1).padStart(2, "0")}</p>
               <h3 className="t-h2 c-ink">{title}</h3>
               <p className="t-body c-muted">{text}</p>
             </li>
@@ -91,8 +86,10 @@ export default async function ServicesPage() {
       </section>
 
       <CtaBand
-        title="Təşkilatınız üçün doğru həlli tapaq."
-        text="Ehtiyaclarınızı paylaşın, uyğun xidmət istiqamətini birlikdə seçək."
+        title="Layihə idarəetməsi ilə bağlı çətinliyiniz var?"
+        text="Vəziyyətinizi bizimlə bölüşün, uyğun yanaşmanı birlikdə müəyyən edək."
+        label="Konsultasiya istəyin"
+        href="/contact#enquiry"
       />
     </div>
   );

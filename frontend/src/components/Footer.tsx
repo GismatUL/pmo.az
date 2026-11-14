@@ -4,8 +4,8 @@ import { ARROW, ECOSYSTEM } from "@/lib/site";
 import { asset } from "@/lib/asset";
 
 const EXPLORE = [
-  { label: "Proqramlar", href: "/programs" },
   { label: "Xidmətlər", href: "/services" },
+  { label: "Təlimlər", href: "/programs" },
   { label: "Haqqımızda", href: "/about" },
   { label: "Ekspertlər", href: "/about#founder" },
   { label: "Xəbərlər", href: "/blog" },
@@ -25,9 +25,9 @@ export async function Footer() {
         <div className="site-footer__brand">
           <img src={asset("/images/logo.png")} alt="PMO.az" width={150} height={58} loading="lazy" />
           <p className="site-footer__tagline">
-            Beynəlxalq təcrübə.
+            Layihə idarəetməsi üzrə
             <br />
-            Yerli dəyər. Real nəticələr.
+            konsaltinq və məsləhət.
           </p>
           <p className="site-footer__social">
             {SOCIAL.map((s, i) => (

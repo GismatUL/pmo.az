@@ -5,7 +5,7 @@ import { ProgramCatalogue } from "@/components/ProgramCatalogue";
 import { getCatalogue } from "@/lib/api";
 
 export const metadata: Metadata = {
-  title: "Proqramlar",
+  title: "Təlimlər",
   description:
     "Beynəlxalq sertifikasiya hazırlığı və praktik layihə idarəetmə proqramları. Ətraflı məlumat və qeydiyyat pmu.az saytındadır.",
 };
@@ -30,7 +30,7 @@ export default async function ProgramsPage() {
   return (
     <div className="inner">
       <PageHero
-        crumb="Proqramlar"
+        crumb="Təlimlər"
         title={
           <>
             İnkişaf yolunuzu

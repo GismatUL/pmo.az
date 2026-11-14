@@ -17,7 +17,7 @@ export function Header() {
   return (
     <header className={`site-header ${pathname === "/" ? "" : "site-header--inner"}`}>
       <Link className="site-header__logo" href="/" aria-label="PMO.az — ana səhifə">
-        <img src={asset("/images/logo.png")} alt="PMO.az — layihə düşüncə məktəbi" width={136} height={52} />
+        <img src={asset("/images/logo.png")} alt="PMO.az" width={136} height={52} />
       </Link>
 
       <nav className="site-nav" aria-label="Əsas naviqasiya">

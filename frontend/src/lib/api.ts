@@ -152,6 +152,7 @@ const toConsulting = (c: ApiConsulting): ConsultingService => {
     title: c.title,
     crumb: c.crumb,
     summary: c.summary,
+    intro: c.intro ?? undefined,
     detail: d
       ? {
           heroTitle: d.hero_title,

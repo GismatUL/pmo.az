@@ -35,7 +35,7 @@ export const POSTS: Post[] = [
     title: "Avrora komandası ilə birlikdə IPMA ICB4 təliminə start verdik",
     shortTitle: "Avrora komandası ilə IPMA ICB4 təliminə start verdik",
     excerpt: "Real iş təcrübələri, interaktiv vörkşoplar və komanda işi ilə zəngin təlim mühiti.",
-    image: "/images/news-avrora.jpg",
+    image: "https://pmo.az/images/news/pmoaz-news-1_1782123411.jpg",
     imageCaption: "Avrora komandası ilə IPMA ICB4 təlimi / PMO.az",
     toc: ["Praktik öyrənmə", "PM Anatomy", "Komanda işi"],
     tags: ["IPMA ICB4", "Korporativ təlim", "PM Anatomy"],
