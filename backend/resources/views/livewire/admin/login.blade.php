@@ -17,6 +17,12 @@
         <label class="check">
             <input type="checkbox" wire:model="remember"> Məni xatırla
         </label>
+        @if ($captchaEnabled)
+            <div class="captcha">
+                <div wire:ignore id="login-captcha" data-sitekey="{{ $captchaSiteKey }}"></div>
+                @error('captcha') <small class="error">{{ $message }}</small> @enderror
+            </div>
+        @endif
         <button type="submit" class="btn btn-primary" wire:loading.attr="disabled">
             <span wire:loading.remove>Daxil ol ↗</span>
             <span wire:loading>Yoxlanılır…</span>

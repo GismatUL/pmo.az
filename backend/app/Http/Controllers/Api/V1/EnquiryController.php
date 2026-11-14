@@ -12,7 +12,7 @@ class EnquiryController extends Controller
     public function store(StoreEnquiryRequest $request, EnquiryService $enquiries): JsonResponse
     {
         $enquiry = $enquiries->submit(
-            $request->safe()->except('website'),
+            $request->safe()->except(['website', 'captcha']),
             $request->ip(),
             $request->userAgent(),
         );

@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Admin;
 
+use App\Support\Turnstile;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Validation\ValidationException;
@@ -22,7 +23,23 @@ class Login extends Component
 
     public bool $remember = false;
 
+    /** Cloudflare Turnstile token, set by the widget in the view. */
+    public string $captcha = '';
+
     public function login()
+    {
+        try {
+            return $this->attemptLogin();
+        } catch (ValidationException $e) {
+            // Turnstile tokens are single-use: get a fresh one for the next try.
+            $this->reset('captcha');
+            $this->dispatch('captcha-reset');
+
+            throw $e;
+        }
+    }
+
+    private function attemptLogin()
     {
         $this->validate();
 
@@ -31,6 +48,12 @@ class Login extends Component
         if (RateLimiter::tooManyAttempts($key, 5)) {
             throw ValidationException::withMessages([
                 'email' => 'Çox sayda cəhd. '.RateLimiter::availableIn($key).' saniyə sonra yenidən yoxlayın.',
+            ]);
+        }
+
+        if (! Turnstile::verify($this->captcha, request()->ip())) {
+            throw ValidationException::withMessages([
+                'captcha' => 'Təhlükəsizlik yoxlaması uğursuz oldu. Zəhmət olmasa, yenidən cəhd edin.',
             ]);
         }
 
@@ -49,6 +72,9 @@ class Login extends Component
 
     public function render()
     {
-        return view('livewire.admin.login');
+        return view('livewire.admin.login', [
+            'captchaEnabled' => Turnstile::enabled(),
+            'captchaSiteKey' => Turnstile::siteKey(),
+        ]);
     }
 }

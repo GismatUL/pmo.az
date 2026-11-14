@@ -2,6 +2,8 @@
 
 namespace App\Http\Requests;
 
+use App\Rules\ValidCaptcha;
+use App\Support\Turnstile;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StoreEnquiryRequest extends FormRequest
@@ -22,6 +24,8 @@ class StoreEnquiryRequest extends FormRequest
             'source' => ['nullable', 'string', 'max:64'],
             // Honeypot: real users never see or fill this field.
             'website' => ['prohibited'],
+            // Cloudflare Turnstile token from the widget on the form.
+            'captcha' => Turnstile::enabled() ? ['bail', 'required', 'string', new ValidCaptcha] : ['nullable'],
         ];
     }
 
@@ -33,6 +37,7 @@ class StoreEnquiryRequest extends FormRequest
             'phone' => 'telefon',
             'company' => 'təşkilat',
             'message' => 'müraciət',
+            'captcha' => 'təhlükəsizlik yoxlaması',
         ];
     }
 }

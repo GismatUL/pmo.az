@@ -6,7 +6,7 @@
     <meta name="robots" content="noindex">
     <title>{{ $title ?? 'Admin' }} — PMO.az CMS</title>
     <link rel="icon" href="{{ asset('favicon.png') }}">
-    <link rel="stylesheet" href="{{ asset('css/admin.css') }}?v=1">
+    <link rel="stylesheet" href="{{ asset('css/admin.css') }}?v=2">
     @livewireStyles
 </head>
 <body class="admin">

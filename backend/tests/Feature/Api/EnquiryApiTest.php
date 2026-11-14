@@ -22,6 +22,7 @@ class EnquiryApiTest extends TestCase
         'phone' => '+994 55 123 45 67',
         'message' => 'Komandamız üçün IPMA təlimi ilə maraqlanırıq.',
         'source' => 'contact',
+        'captcha' => self::CAPTCHA_OK,
     ];
 
     public function test_valid_enquiry_is_stored_and_event_dispatched(): void
@@ -61,6 +62,35 @@ class EnquiryApiTest extends TestCase
         $this->postJson('/api/v1/enquiries', [...$this->valid, 'website' => 'http://spam.example'])
             ->assertUnprocessable()
             ->assertJsonValidationErrors('website');
+    }
+
+    public function test_enquiries_require_a_valid_captcha(): void
+    {
+        $this->postJson('/api/v1/enquiries', [...$this->valid, 'captcha' => null])
+            ->assertUnprocessable()
+            ->assertJsonValidationErrors('captcha');
+
+        $this->postJson('/api/v1/enquiries', [...$this->valid, 'captcha' => 'forged-token'])
+            ->assertUnprocessable()
+            ->assertJsonValidationErrors('captcha');
+
+        $this->assertSame(0, Enquiry::query()->count());
+    }
+
+    public function test_captcha_fails_closed_without_a_secret(): void
+    {
+        config(['services.turnstile.secret_key' => null]);
+
+        $this->postJson('/api/v1/enquiries', $this->valid)
+            ->assertUnprocessable()
+            ->assertJsonValidationErrors('captcha');
+    }
+
+    public function test_captcha_can_be_disabled(): void
+    {
+        config(['services.turnstile.enabled' => false]);
+
+        $this->postJson('/api/v1/enquiries', [...$this->valid, 'captcha' => null])->assertCreated();
     }
 
     public function test_status_and_internal_fields_cannot_be_mass_assigned(): void

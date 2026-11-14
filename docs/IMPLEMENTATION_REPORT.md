@@ -47,8 +47,8 @@
   and upserts on a stable key, so it's idempotent. Images are copied from
   `seeders/assets` to the public disk.
 - **Verification:**
-  - `php artisan test` → 24 tests passed (139 assertions): API, enquiries
-    (validation, honeypot, mass assignment, rate limit, mail, CORS), admin
+  - `php artisan test` → 29 tests passed (162 assertions): API, enquiries
+    (validation, captcha, honeypot, mass assignment, rate limit, mail, CORS), admin
     access, login, CRUD, uploads, settings, seeder idempotency, and
     `BlockText`.
   - Pint passes.
@@ -72,7 +72,12 @@
    descriptions, stats, pillar summaries and the PMO service page come from
    Figma. Long-form texts, posts, experts, books and courses come from the
    live site.
-5. **Uploads are limited to raster images.** SVG is excluded because it
+5. **Captcha: Cloudflare Turnstile** on the admin login and the enquiry
+   form, verified server-side (`App\Support\Turnstile`, rule
+   `ValidCaptcha`). It's free and has no picture puzzles. On the site it
+   runs invisibly, so the Figma layout is unchanged. It fails closed when
+   misconfigured.
+6. **Uploads are limited to raster images.** SVG is excluded because it
    would be served same-origin (XSS risk). The seeded partner SVG logos are
    static.
 
@@ -97,3 +102,7 @@
 7. **Mail delivery.** Enquiry emails are queued
    (`QUEUE_CONNECTION=database`, `MAIL_MAILER=log` locally). Production
    needs SMTP settings and a running `php artisan queue:work`.
+8. **Captcha keys.** Local setup uses Cloudflare's test keys. Production
+   needs a (free) Turnstile widget for the live domains: its site key goes
+   in the backend `.env` and the frontend build env, its secret key in the
+   backend `.env` only.

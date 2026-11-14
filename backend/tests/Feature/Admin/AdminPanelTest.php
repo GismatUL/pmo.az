@@ -67,21 +67,48 @@ class AdminPanelTest extends TestCase
         $regular = User::factory()->create();
 
         Livewire::test(Login::class)
-            ->set('email', $regular->email)->set('password', 'password')
+            ->set('email', $regular->email)->set('password', 'password')->set('captcha', self::CAPTCHA_OK)
             ->call('login')
             ->assertHasErrors('email');
         $this->assertGuest();
 
         Livewire::test(Login::class)
-            ->set('email', $admin->email)->set('password', 'wrong')
+            ->set('email', $admin->email)->set('password', 'wrong')->set('captcha', self::CAPTCHA_OK)
             ->call('login')
             ->assertHasErrors('email');
 
         Livewire::test(Login::class)
-            ->set('email', $admin->email)->set('password', 'password')
+            ->set('email', $admin->email)->set('password', 'password')->set('captcha', self::CAPTCHA_OK)
             ->call('login')
             ->assertRedirect(route('admin.dashboard'));
         $this->assertAuthenticatedAs($admin);
+    }
+
+    public function test_login_requires_a_valid_captcha(): void
+    {
+        $admin = $this->admin();
+
+        Livewire::test(Login::class)
+            ->set('email', $admin->email)->set('password', 'password')
+            ->call('login')
+            ->assertHasErrors('captcha')
+            ->assertDispatched('captcha-reset')
+            ->assertSet('captcha', '');
+
+        Livewire::test(Login::class)
+            ->set('email', $admin->email)->set('password', 'password')->set('captcha', 'forged-token')
+            ->call('login')
+            ->assertHasErrors('captcha');
+
+        $this->assertGuest();
+    }
+
+    public function test_login_page_renders_the_captcha_widget(): void
+    {
+        $this->get('/admin/login')
+            ->assertOk()
+            ->assertSee('data-sitekey="test-site-key"', false)
+            ->assertSee('challenges.cloudflare.com/turnstile', false);
     }
 
     public function test_admin_can_create_a_post_with_blocks_and_cover(): void
